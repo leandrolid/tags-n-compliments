@@ -1,0 +1,11 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "name": "NLW Valoriza",
+      "database": "${workspaceFolder:nlw-valoriza}/src/database/nlw_valoriza.sqlite"
+    }
+  ],
+  "sqltools.useNodeRuntime": true
+}

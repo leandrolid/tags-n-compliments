@@ -1,4 +1,6 @@
+import 'reflect-metadata';
 import express, { json } from 'express';
+import './database';
 
 const api = express();
 api.use(json());
