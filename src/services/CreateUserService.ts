@@ -1,5 +1,5 @@
 import { getCustomRepository } from 'typeorm';
-import { UserRepositories } from '../repositories/UserRepositories';
+import { UserRepositories } from '@repositories/UserRepositories';
 
 type IUserRequest = {
   name: string,
@@ -12,8 +12,8 @@ class CreateUserService {
   async execute({ name, email, admin, password }: IUserRequest) {
     const userRepository = getCustomRepository(UserRepositories);
     
-    if (!email) {
-      throw new Error("E-mail invalid");
+    if (!email || !password) {
+      throw new Error("Invalid e-mail or password");
     }
 
     const userAlreadyExists = await userRepository.findOne({ email });

@@ -8,10 +8,9 @@ export class AlterUsersAddColumn1629849359920 implements MigrationInterface {
             new TableColumn({
                 name: 'password',
                 type: 'varchar',
-                default: 'senhapadrao',
                 isNullable: true
             })
-        )
+        );
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
