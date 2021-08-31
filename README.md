@@ -45,7 +45,7 @@ cd tags-n-compliments
 # Instale as dependências
 yarn install
 
-# Crie a sua chave SALT no 
+# Crie sua chave secreta nas variáveis ambiente
 echo "SALT=test" > .env.local
 
 # Rode o aplicação
