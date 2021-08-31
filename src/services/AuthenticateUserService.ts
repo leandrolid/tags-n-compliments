@@ -38,7 +38,7 @@ class AuthenticateUserService {
       process.env.SALT,
       {
         subject: user.id,
-        expiresIn: '1d'
+        expiresIn: 86400 // 1day
       }
     )
 
