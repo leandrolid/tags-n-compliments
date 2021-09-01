@@ -1,7 +1,7 @@
 const dotenv = require('dotenv');
 
 dotenv.config({
-  path: '.env.test',
+  path: process.env.NODE_ENV === 'dev' ? '.env.local' : '.env',
 });
 
 module.exports = {

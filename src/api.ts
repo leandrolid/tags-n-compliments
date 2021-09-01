@@ -9,7 +9,7 @@ const api = express();
 connection();
 
 dotenv.config({
-  path: '.env.test',
+  path: process.env.NODE_ENV === 'dev' ? '.env.local' : '.env',
 });
 
 api.use(json());
