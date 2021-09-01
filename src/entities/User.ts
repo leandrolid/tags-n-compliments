@@ -21,7 +21,7 @@ class User {
   @Column({ select: false })
   password: string;
 
-  @Column()
+  @Column({ default: false })
   admin: boolean;
 
   @CreateDateColumn()
