@@ -11,7 +11,7 @@
 
 ## Preview
 
-<a title="Devcastr" href="/" >Clique aqui </a> para ter acesso a um  preview do App. <br>
+<a title="Tags&Compliments" href="#" >Clique aqui </a> para ter acesso a um  preview do App. <br>
 
 ## Sobre o Tags&Compliments
 
