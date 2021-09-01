@@ -39,11 +39,14 @@ Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
 git clone git@github.com:leandrolid/tags-n-compliments.git
 # ou use a opção de download.
 
-# Entre na pasta web com 
+# Entre na pasta com 
 cd tags-n-compliments
 
 # Instale as dependências
 yarn install
+
+# Rodar as migrations do banco de dados
+yarn typeorm migration:run
 
 # Crie sua chave secreta nas variáveis ambiente
 echo "SALT=test" > .env.local
