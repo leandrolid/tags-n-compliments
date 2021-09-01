@@ -9,7 +9,7 @@ export async function verifyAdmin(
   const { userEmail } = request.headers;
 
   const getUserService = new GetUserService();
-  const user = await getUserService.execute( { email: String(userEmail) } );
+  const user = await getUserService.execute({ email: String(userEmail) });
 
   // const isAdmin = true;
 

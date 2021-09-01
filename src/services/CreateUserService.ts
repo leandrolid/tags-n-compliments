@@ -26,7 +26,7 @@ class CreateUserService {
       throw new Error('User already exists');
     }
 
-    const passwordHash = await hash( password, 8);
+    const passwordHash = await hash(password, 8);
 
     const newUser = userRepository.create({
       name,
@@ -37,7 +37,7 @@ class CreateUserService {
 
     await userRepository.save(newUser);
 
-    return newUser;
+    return { ...newUser, password: undefined };
   };
 }
 

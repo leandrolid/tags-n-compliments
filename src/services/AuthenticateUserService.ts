@@ -18,29 +18,33 @@ class AuthenticateUserService {
       throw new Error('Invalid e-mail or password');
     }
 
-    const user = await userRepository.findOne({ email });
+    const user = await userRepository.findOne(
+      { email },
+      {
+        select: ['password', 'email'],
+      }
+    );
 
     if (!user) {
       throw new Error('Email/Password incorrect');
     }
-    
-    
-    const isPasswordValid = await compare( password, user.password );
-    
-    if ( !isPasswordValid ) {
+
+    const isPasswordValid = await compare(password, user.password);
+
+    if (!isPasswordValid) {
       throw new Error('Email/Password incorrect');
     }
 
     const token = sign(
       {
-        email: user.email
+        email: user.email,
       },
       process.env.SALT,
       {
         subject: user.id,
-        expiresIn: 86400 // 1day
+        expiresIn: 86400, // 1day
       }
-    )
+    );
 
     return token;
   };

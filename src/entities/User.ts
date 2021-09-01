@@ -18,7 +18,7 @@ class User {
   @Column()
   email: string;
 
-  @Column()
+  @Column({ select: false })
   password: string;
 
   @Column()
@@ -31,9 +31,8 @@ class User {
   updated_at: Date;
 
   constructor() {
-    if (!this.id) {
-      this.id = uuidv4();
-    }
+    if (!this.id) this.id = uuidv4();
+    // if (!this.admin) this.admin = false;
   }
 }
 
