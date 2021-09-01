@@ -2,6 +2,7 @@ import { NextFunction, Request, Response } from 'express';
 import { verify } from 'jsonwebtoken';
 
 type IPayload = {
+  id: string;
   email: string;
   iat: number;
   exp: number;

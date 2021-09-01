@@ -6,8 +6,7 @@ export async function verifyAdmin(
   response: Response,
   next: NextFunction
 ) {
-  const { userEmail, userId } = request.headers;
-  console.log(userId);
+  const { userEmail } = request.headers;
 
   const getUserService = new GetUserService();
   const user = await getUserService.execute({ email: String(userEmail) });
