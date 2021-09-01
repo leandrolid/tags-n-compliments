@@ -41,6 +41,7 @@ export async function verifyJWT(
   }
 
   request.headers.userEmail = payload.email;
+  request.headers.userId = payload.sub;
 
   return next();
 }
