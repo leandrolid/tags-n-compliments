@@ -1,14 +1,18 @@
 const dotenv = require('dotenv');
 
 dotenv.config({
-  path: process.env.NODE_ENV === 'dev' ? '.env.local' : '.env',
+  path: '.env.test',
 });
 
 module.exports = {
   name: 'default',
   type: process.env.DB_TYPE,
-  url: process.env.DB_PATH,
-  database: process.env.DB_PATH,
+  host: process.env.DB_HOST,
+  username: process.env.DB_USERNAME,
+  port: process.env.DB_PORT,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
+  // url: process.env.DB_PATH,
   migrations: [process.env.MIGRATIONS_FOLDER],
   entities: [
     process.env.NODE_ENV === 'dev'
