@@ -12,8 +12,8 @@ module.exports = {
     rejectUnauthorized: false,
   },
   url: process.env.DB_URL,
-  migrations: ['src/database/migrations/*.ts', 'dist/database/migrations/*.js'],
-  entities: ['dist/entities/*.js', 'src/entities/*.ts'],
+  migrations: ['src/database/migrations/*.*', 'dist/database/migrations/*.*'],
+  entities: ['dist/entities/*.*', 'src/entities/*.*'],
   cli: {
     migrationsDir: './src/database/migrations',
     entitiesDir: './src/entities',
