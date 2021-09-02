@@ -33,7 +33,7 @@ var api = express_1.default();
 exports.api = api;
 database_1.connection();
 dotenv_1.default.config({
-    path: process.env.NODE_ENV === 'dev' ? '.env.local' : '.env.test',
+    path: process.env.NODE_ENV === 'dev' ? '.env.local' : '.env',
 });
 api.use(express_1.json());
 api.use(routes_1.router);

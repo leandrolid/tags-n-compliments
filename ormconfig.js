@@ -7,12 +7,15 @@ dotenv.config({
 module.exports = {
   name: 'default',
   type: process.env.DB_TYPE,
-  host: process.env.DB_HOST,
-  username: process.env.DB_USERNAME,
-  port: process.env.DB_PORT,
-  password: process.env.DB_PASSWORD,
+  // host: process.env.DB_HOST,
+  // username: process.env.DB_USERNAME,
+  // port: process.env.DB_PORT,
+  // password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
-  // url: process.env.DB_PATH,
+  ssl: {
+    rejectUnauthorized: false,
+  },
+  url: process.env.DB_URL,
   migrations: [process.env.MIGRATIONS_FOLDER],
   entities: [
     process.env.NODE_ENV === 'dev'

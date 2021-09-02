@@ -1,5 +1,7 @@
+node_modules/
+.vscode/
+.lint/
+
 .env
 .env.local
 .env.test
-
-node_modules/
