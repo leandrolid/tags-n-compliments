@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,48 +7,45 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.User = void 0;
-var typeorm_1 = require("typeorm");
-var uuid_1 = require("uuid");
-var User = /** @class */ (function () {
-    function User() {
+import { Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn, } from 'typeorm';
+import { v4 as uuidv4 } from 'uuid';
+let User = class User {
+    constructor() {
         if (!this.id)
-            this.id = uuid_1.v4();
+            this.id = uuidv4();
         // if (!this.admin) this.admin = false;
     }
-    __decorate([
-        typeorm_1.PrimaryColumn(),
-        __metadata("design:type", String)
-    ], User.prototype, "id", void 0);
-    __decorate([
-        typeorm_1.Column(),
-        __metadata("design:type", String)
-    ], User.prototype, "name", void 0);
-    __decorate([
-        typeorm_1.Column(),
-        __metadata("design:type", String)
-    ], User.prototype, "email", void 0);
-    __decorate([
-        typeorm_1.Column({ select: false }),
-        __metadata("design:type", String)
-    ], User.prototype, "password", void 0);
-    __decorate([
-        typeorm_1.Column({ default: false }),
-        __metadata("design:type", Boolean)
-    ], User.prototype, "admin", void 0);
-    __decorate([
-        typeorm_1.CreateDateColumn(),
-        __metadata("design:type", Date)
-    ], User.prototype, "created_at", void 0);
-    __decorate([
-        typeorm_1.UpdateDateColumn(),
-        __metadata("design:type", Date)
-    ], User.prototype, "updated_at", void 0);
-    User = __decorate([
-        typeorm_1.Entity('users'),
-        __metadata("design:paramtypes", [])
-    ], User);
-    return User;
-}());
-exports.User = User;
+};
+__decorate([
+    PrimaryColumn(),
+    __metadata("design:type", String)
+], User.prototype, "id", void 0);
+__decorate([
+    Column(),
+    __metadata("design:type", String)
+], User.prototype, "name", void 0);
+__decorate([
+    Column(),
+    __metadata("design:type", String)
+], User.prototype, "email", void 0);
+__decorate([
+    Column({ select: false }),
+    __metadata("design:type", String)
+], User.prototype, "password", void 0);
+__decorate([
+    Column({ default: false }),
+    __metadata("design:type", Boolean)
+], User.prototype, "admin", void 0);
+__decorate([
+    CreateDateColumn(),
+    __metadata("design:type", Date)
+], User.prototype, "created_at", void 0);
+__decorate([
+    UpdateDateColumn(),
+    __metadata("design:type", Date)
+], User.prototype, "updated_at", void 0);
+User = __decorate([
+    Entity('users'),
+    __metadata("design:paramtypes", [])
+], User);
+export { User };

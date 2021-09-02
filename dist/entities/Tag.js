@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,36 +7,33 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Tag = void 0;
-var typeorm_1 = require("typeorm");
-var uuid_1 = require("uuid");
-var Tag = /** @class */ (function () {
-    function Tag() {
+import { Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn, } from 'typeorm';
+import { v4 as uuidv4 } from 'uuid';
+let Tag = class Tag {
+    constructor() {
         if (!this.id) {
-            this.id = uuid_1.v4();
+            this.id = uuidv4();
         }
     }
-    __decorate([
-        typeorm_1.PrimaryColumn(),
-        __metadata("design:type", String)
-    ], Tag.prototype, "id", void 0);
-    __decorate([
-        typeorm_1.Column(),
-        __metadata("design:type", String)
-    ], Tag.prototype, "name", void 0);
-    __decorate([
-        typeorm_1.CreateDateColumn(),
-        __metadata("design:type", Date)
-    ], Tag.prototype, "created_at", void 0);
-    __decorate([
-        typeorm_1.UpdateDateColumn(),
-        __metadata("design:type", Date)
-    ], Tag.prototype, "updated_at", void 0);
-    Tag = __decorate([
-        typeorm_1.Entity('tags'),
-        __metadata("design:paramtypes", [])
-    ], Tag);
-    return Tag;
-}());
-exports.Tag = Tag;
+};
+__decorate([
+    PrimaryColumn(),
+    __metadata("design:type", String)
+], Tag.prototype, "id", void 0);
+__decorate([
+    Column(),
+    __metadata("design:type", String)
+], Tag.prototype, "name", void 0);
+__decorate([
+    CreateDateColumn(),
+    __metadata("design:type", Date)
+], Tag.prototype, "created_at", void 0);
+__decorate([
+    UpdateDateColumn(),
+    __metadata("design:type", Date)
+], Tag.prototype, "updated_at", void 0);
+Tag = __decorate([
+    Entity('tags'),
+    __metadata("design:paramtypes", [])
+], Tag);
+export { Tag };
