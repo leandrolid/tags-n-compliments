@@ -44,6 +44,7 @@ var connection = function () { return __awaiter(void 0, void 0, void 0, function
             case 0: return [4 /*yield*/, typeorm_1.createConnection()];
             case 1:
                 _a.sent();
+                typeorm_1.getConnection('default');
                 return [2 /*return*/];
         }
     });

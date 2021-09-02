@@ -1,6 +1,6 @@
-import { createConnection } from 'typeorm';
+import { createConnection, getConnection } from 'typeorm';
 
 export const connection = async () => {
   await createConnection();
-  // return getConnection('default');
+  getConnection('default');
 };
