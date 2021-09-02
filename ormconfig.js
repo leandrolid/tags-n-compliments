@@ -15,8 +15,8 @@ module.exports = {
   url: process.env.DB_URL,
   migrations: ['src/database/migrations/*.ts', 'dist/database/migrations/*.js'],
   entities: [
-    path.join('dist', 'entities', '*.js'),
-    path.join('src', 'entities', '*.ts'),
+    path.join(__dirname, 'dist', 'entities', '*.js'),
+    path.join(__dirname, 'src', 'entities', '*.ts'),
   ],
   cli: {
     migrationsDir: './src/database/migrations',
