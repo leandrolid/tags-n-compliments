@@ -1,4 +1,5 @@
 const dotenv = require('dotenv');
+const path = require('path');
 
 dotenv.config({
   path: process.env.NODE_ENV === 'dev' ? '.env.local' : '.env',
@@ -12,8 +13,11 @@ module.exports = {
     rejectUnauthorized: false,
   },
   url: process.env.DB_URL,
-  migrations: ['src/database/migrations/*.*', 'dist/database/migrations/*.*'],
-  entities: ['dist/entities/*.*', 'src/entities/*.*'],
+  migrations: ['src/database/migrations/*.ts', 'dist/database/migrations/*.js'],
+  entities: [
+    path.join('dist', 'entities', '*.js'),
+    path.join('src', 'entities', '*.ts'),
+  ],
   cli: {
     migrationsDir: './src/database/migrations',
     entitiesDir: './src/entities',

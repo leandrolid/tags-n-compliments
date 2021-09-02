@@ -2,11 +2,10 @@ import 'reflect-metadata';
 import express, { json, NextFunction, Request, Response } from 'express';
 import 'express-async-errors';
 import dotenv from 'dotenv';
-import { connection } from './database';
+import './database';
 import { router } from './routes';
 
 const api = express();
-connection();
 
 dotenv.config({
   path: process.env.NODE_ENV === 'dev' ? '.env.local' : '.env',
