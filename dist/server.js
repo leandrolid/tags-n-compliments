@@ -1,6 +1,8 @@
-import { api } from './api';
-const API_PORT = process.env.PORT || 3000;
-api.listen(API_PORT, () => {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var api_1 = require("./api");
+var API_PORT = process.env.PORT || 3000;
+api_1.api.listen(API_PORT, function () {
     console.log('server running');
     console.log('migrations', process.env.DB_TYPE);
     // console.log('migrations', process.env.MIGRATIONS_FOLDER);
