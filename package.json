@@ -2,6 +2,8 @@
   "name": "nlw-valoriza",
   "version": "1.0.0",
   "description": "",
+  "module": "esnext",
+  "target": "es2017",
   "main": "./src/server.js",
   "scripts": {
     "dev": "NODE_ENV=dev ts-node-dev -r tsconfig-paths/register src/server.ts",
