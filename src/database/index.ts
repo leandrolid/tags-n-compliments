@@ -14,7 +14,7 @@ const TS = path.join(__dirname, '..', 'entities', '*.ts');
 console.log(JS);
 console.log(TS);
 
-const connection = () => {
+const connection = async () => {
   createConnection({
     name: 'default',
     // type: process.env.DB_TYPE ,
@@ -23,13 +23,13 @@ const connection = () => {
     url: process.env.DB_URL,
     migrations: ['migrations/*.ts', 'migrations/*.js'],
     entities: [JS, TS],
-  });
+  })
+    .then((test) => console.log(test))
+    .catch((err) => {
+      throw new Error(err.message);
+    });
 };
 
-try {
-  connection();
-} catch (error) {
-  throw new Error(error.message);
-}
+connection();
 
 export { connection };
