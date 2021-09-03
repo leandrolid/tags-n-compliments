@@ -14,8 +14,8 @@ const TS = path.join(__dirname, '..', 'entities', '*.ts');
 console.log(JS);
 console.log(TS);
 
-const connection = async () => {
-  await createConnection({
+const connection = () => {
+  createConnection({
     name: 'default',
     // type: process.env.DB_TYPE ,
     type: process.env.NODE_ENV === 'dev' ? 'sqlite' : 'postgres',
