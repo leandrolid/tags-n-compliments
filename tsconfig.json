@@ -18,8 +18,8 @@
     "skipLibCheck": true /* Skip type checking of declaration files. */,
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */,
     "noEmit": false /* Do not emit outputs. */,
-    "outDir": "./dist" /* Redirect output structure to the directory. */,
-    "moduleResolution": "node" /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
+    "outDir": "./dist" /* Redirect output structure to the directory. */
+    // "moduleResolution": "node" /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
     // "outFile": "./dist/server.js" /* Concatenate and emit output to single file. */
     /* Basic Options */
     // "incremental": true,                         /* Enable incremental compilation */

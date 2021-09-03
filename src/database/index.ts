@@ -1,35 +1,14 @@
 import { createConnection } from 'typeorm';
 import path from 'path';
-// import dotenv from 'dotenv';
 
-// dotenv.config({
-//   path: process.env.NODE_ENV === 'dev' ? '.env.local' : '.env',
-// });
-// export const connection = (async () => {
-//   await createConnection();
-//   getConnection('default');
-// })();
-const JS = path.join(__dirname, '..', 'entities', '*.js');
-const TS = path.join(__dirname, '..', 'entities', '*.ts');
-console.log(JS);
-console.log(TS);
+// const JS = path.join(__dirname, '..', 'entities', '*.js');
+// const TS = path.join(__dirname, '..', 'entities', '*.ts');
+// const DATABASE = path.join(__dirname, 'tags_n_comliments.sqlite');
+// console.log(JS);
+// console.log(TS);
 
-const connection = async () => {
-  createConnection({
-    name: 'default',
-    // type: process.env.DB_TYPE ,
-    type: process.env.NODE_ENV === 'dev' ? 'sqlite' : 'postgres',
-    database: process.env.DB_DATABASE,
-    url: process.env.DB_URL,
-    migrations: ['migrations/*.ts', 'migrations/*.js'],
-    entities: [JS, TS],
-  })
-    .then((test) => console.log(test))
-    .catch((err) => {
-      throw new Error(err.message);
-    });
-};
-
-connection();
-
-export { connection };
+export default createConnection()
+  .then((res) => console.log(res))
+  .catch((err) => {
+    throw new Error(err.message);
+  });
