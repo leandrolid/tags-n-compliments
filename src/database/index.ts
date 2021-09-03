@@ -11,6 +11,8 @@ import path from 'path';
 // })();
 const JS = path.join(__dirname, '..', 'entities', '*.js');
 const TS = path.join(__dirname, '..', 'entities', '*.ts');
+console.log(JS);
+console.log(TS);
 
 export const connection = () =>
   createConnection({
