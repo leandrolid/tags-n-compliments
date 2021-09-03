@@ -7,7 +7,7 @@ import { createConnection } from 'typeorm';
 createConnection()
   .then((res) => {
     console.log('db.connected:', res.isConnected);
-    console.log('entities:', process.env.ENTITIES_FOLDER);
+    // console.log('entities:', process.env.ENTITIES_FOLDER);
   })
   .catch((err) => {
     throw new Error(err.message);

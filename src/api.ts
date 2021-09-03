@@ -16,6 +16,7 @@ api.use(router);
 api.use(
   (err: Error, request: Request, response: Response, next: NextFunction) => {
     if (err instanceof Error) {
+      console.error('error:', err.stack);
       return response.status(400).json({
         type: err.name,
         error: err.message,

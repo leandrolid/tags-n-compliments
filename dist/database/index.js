@@ -4,8 +4,11 @@ var typeorm_1 = require("typeorm");
 // const DATABASE = path.join(__dirname, 'tags_n_comliments.sqlite');
 // console.log(JS);
 // console.log(TS);
-exports.default = typeorm_1.createConnection()
-    .then(function (res) { return console.log('db.connected:', res.isConnected); })
+typeorm_1.createConnection()
+    .then(function (res) {
+    console.log('db.connected:', res.isConnected);
+    // console.log('entities:', process.env.ENTITIES_FOLDER);
+})
     .catch(function (err) {
     throw new Error(err.message);
 });

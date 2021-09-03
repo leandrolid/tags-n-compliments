@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var api_1 = require("./api");
+require("./database");
 var API_PORT = process.env.PORT || 3000;
 api_1.api.listen(API_PORT, function () {
     console.log('server running');
