@@ -24,16 +24,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.api = void 0;
 require("reflect-metadata");
+var dotenv_1 = __importDefault(require("dotenv"));
 var express_1 = __importStar(require("express"));
 require("express-async-errors");
-var dotenv_1 = __importDefault(require("dotenv"));
-require("./database");
+var database_1 = require("./database");
 var routes_1 = require("./routes");
 var api = express_1.default();
 exports.api = api;
 dotenv_1.default.config({
-    path: process.env.NODE_ENV === 'dev' ? '.env.local' : '.env',
+    path: process.env.NODE_ENV === 'dev' ? '.env.local' : '.env.test',
 });
+database_1.connection();
 api.use(express_1.json());
 api.use(routes_1.router);
 api.use(function (err, request, response, next) {

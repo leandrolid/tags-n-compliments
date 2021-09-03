@@ -1,15 +1,17 @@
 import 'reflect-metadata';
+import dotenv from 'dotenv';
 import express, { json, NextFunction, Request, Response } from 'express';
 import 'express-async-errors';
-import dotenv from 'dotenv';
-import './database';
+import { connection } from './database';
 import { router } from './routes';
 
 const api = express();
 
 dotenv.config({
-  path: process.env.NODE_ENV === 'dev' ? '.env.local' : '.env',
+  path: process.env.NODE_ENV === 'dev' ? '.env.local' : '.env.test',
 });
+
+connection();
 
 api.use(json());
 api.use(router);
