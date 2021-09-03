@@ -8,7 +8,7 @@ import {
 import { v4 as uuidv4 } from 'uuid';
 
 @Entity('tags')
-class Tag {
+export class Tag {
   @PrimaryColumn()
   readonly id: string;
 
@@ -27,5 +27,3 @@ class Tag {
     }
   }
 }
-
-export { Tag };

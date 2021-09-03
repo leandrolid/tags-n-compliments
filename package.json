@@ -2,12 +2,10 @@
   "name": "nlw-valoriza",
   "version": "1.0.0",
   "description": "",
-  "module": "esnext",
-  "target": "es2017",
   "main": "./src/server.js",
   "scripts": {
     "dev": "NODE_ENV=dev ts-node-dev -r tsconfig-paths/register src/server.ts",
-    "dev:server": "ts-node-dev -r tsconfig-paths/register src/server.ts",
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
     "start": "node -r ts-node/register -r tsconfig-paths/register dist/server.js",
     "lint": "eslint . --ext .ts",
     "test": "echo \"Error: no test specified\" && exit 1"

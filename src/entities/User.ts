@@ -8,7 +8,7 @@ import {
 import { v4 as uuidv4 } from 'uuid';
 
 @Entity('users')
-class User {
+export class User {
   @PrimaryColumn()
   readonly id: string;
 
@@ -35,5 +35,3 @@ class User {
     // if (!this.admin) this.admin = false;
   }
 }
-
-export { User };

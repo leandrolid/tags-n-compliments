@@ -2,7 +2,6 @@ import 'reflect-metadata';
 import dotenv from 'dotenv';
 import express, { json, NextFunction, Request, Response } from 'express';
 import 'express-async-errors';
-import './database';
 import { router } from './routes';
 
 const api = express();
